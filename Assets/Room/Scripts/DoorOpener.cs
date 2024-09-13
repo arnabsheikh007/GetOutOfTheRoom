@@ -5,6 +5,7 @@ using UnityEngine;
 public class DoorOpener : MonoBehaviour
 {
     private Animator doorAnimator;
+    public GameManager gameManager;
 
 
     void Start()
@@ -19,10 +20,13 @@ public class DoorOpener : MonoBehaviour
         // Check if the object entering the trigger is the player (or another specified object)
         if (other.CompareTag("Player")) // Make sure the player GameObject has the tag "Player"
         {
-            if (doorAnimator != null)
+            if(gameManager.IsRightKeyCollected())
             {
-                // Trigger the Door_Open animation
-                doorAnimator.SetTrigger("Door_Open");
+                if (doorAnimator != null)
+                {
+                    // Trigger the Door_Open animation
+                    doorAnimator.SetTrigger("Door_Open");
+                }
             }
         }
     }
