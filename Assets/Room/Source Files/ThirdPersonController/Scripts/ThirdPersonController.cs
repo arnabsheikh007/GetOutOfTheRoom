@@ -183,6 +183,16 @@ namespace StarterAssets
             Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers,
                 QueryTriggerInteraction.Ignore);
 
+            Collider[] colliders = Physics.OverlapSphere(spherePosition, GroundedRadius, GroundLayers);
+            foreach (Collider collider in colliders)
+            {
+                if (collider.CompareTag("Ground"))
+                {
+                    Grounded = true;
+                    break;
+                }
+            }
+
             // update animator if using character
             if (_hasAnimator)
             {
