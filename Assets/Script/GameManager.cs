@@ -20,6 +20,21 @@ public class GameManager : MonoBehaviour
         
     }
 
+    
+
+    public void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
+    public void LevelUp()
+    {
+        ChangeSceneAfterDelay(1, 5f);
+    }
+
     public void GameOver()
     {
         isGameOver = true;

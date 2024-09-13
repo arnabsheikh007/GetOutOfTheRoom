@@ -27,6 +27,8 @@ public class DoorOpener : MonoBehaviour
                     // Trigger the Door_Open animation
                     doorAnimator.SetTrigger("Door_Open");
                 }
+                // Call the LevelUp function from the GameManager script
+                gameManager.LevelUp();
             }
         }
     }
