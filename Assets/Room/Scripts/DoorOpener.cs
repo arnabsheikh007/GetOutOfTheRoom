@@ -5,8 +5,6 @@ using UnityEngine;
 public class DoorOpener : MonoBehaviour
 {
     private Animator doorAnimator;
-    public GameManager gameManager;
-
 
     void Start()
     {
@@ -20,7 +18,7 @@ public class DoorOpener : MonoBehaviour
         // Check if the object entering the trigger is the player (or another specified object)
         if (other.CompareTag("Player")) // Make sure the player GameObject has the tag "Player"
         {
-            if(gameManager.IsRightKeyCollected())
+            if(GameManager.Instance.IsRightKeyCollected())
             {
                 if (doorAnimator != null)
                 {
@@ -28,7 +26,7 @@ public class DoorOpener : MonoBehaviour
                     doorAnimator.SetTrigger("Door_Open");
                 }
                 // Call the LevelUp function from the GameManager script
-                gameManager.LevelUp();
+                GameManager.Instance.LevelUp();
             }
         }
     }

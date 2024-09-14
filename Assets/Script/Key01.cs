@@ -6,7 +6,8 @@ public class Key01 : MonoBehaviour
 {
     public float rotationSpeed; // Set collectible's rotation speed.
     public GameObject onCollectEffect; // Set collectible's effect on collection.
-    public GameManager gameManager; // Reference to the GameManager script.
+    public GameObject key;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,15 +25,14 @@ public class Key01 : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             // Destroy the collectible
-            Destroy(gameObject);
+            Destroy(key);
 
             // instantiate the particle effect
             Instantiate(onCollectEffect, transform.position, transform.rotation);
 
             // Call the RightKeyCollected method from the GameManager script.
-            gameManager.RightKeyCollected();
+            GameManager.Instance.RightKeyCollected();
         }
 
     }
-
 }

@@ -282,7 +282,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2302821824f48f40a80e9b5693e45c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 743175991}
 --- !u!65 &245681069
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -457,7 +456,7 @@ MonoBehaviour:
   rotationSpeed: 5
   onCollectEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
-  gameManager: {fileID: 743175991}
+  key: {fileID: 377498536}
 --- !u!136 &377498543
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -769,7 +768,7 @@ MonoBehaviour:
   rotationSpeed: 5
   onCollectEffect: {fileID: 9163842254569548763, guid: 919783951ffab4c9ea8860c54de9543c,
     type: 3}
-  gameManager: {fileID: 743175991}
+  key: {fileID: 872616899}
 --- !u!1 &898267414 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8157804359357566445, guid: 5666bfa8093f4924ba013107051783da,
@@ -1104,9 +1103,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onPressEffect: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664,
     type: 3}
-  gameManager: {fileID: 743175991}
   KeyToDestroy: {fileID: 872616899}
-  player: {fileID: 0}
+  player: {fileID: 4416926083417280144}
+  Bomb: {fileID: 0}
 --- !u!1 &1384353320
 GameObject:
   m_ObjectHideFlags: 0
