@@ -7,9 +7,9 @@ using UnityEngine;
 public class BombBlast : MonoBehaviour
 {
     public GameObject onPressEffect; // Set collectible's effect on collection.
-    public GameManager gameManager; // Reference to the GameManager script.
     public GameObject KeyToDestroy;
     public GameObject player;
+    public GameObject Bomb;
     void Start()
     {
 
@@ -35,7 +35,7 @@ public class BombBlast : MonoBehaviour
                 ps.Play();
                 Destroy(effect, ps.main.duration);  // Destroy the effect after its duration
             }
-            Destroy(gameObject);
+            Destroy(Bomb); ;
             Destroy(KeyToDestroy);
 
             Debug.Log("Player has been killed by the bomb blast");
@@ -55,7 +55,7 @@ public class BombBlast : MonoBehaviour
             //}
 
             // Call the GameOver function from the GameManager script
-            gameManager.GameOver();
+            GameManager.Instance.GameOver();
         }
 
     }

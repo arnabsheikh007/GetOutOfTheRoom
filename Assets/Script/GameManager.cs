@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager Instance;
 
     private bool isGameOver = false;
+    private bool isLevelUp = false;
     private bool rightKeyCollected = false;
     void Start()
     {
@@ -20,25 +21,38 @@ public class GameManager : MonoBehaviour
         
     }
 
-    
 
-    public void Awake()
+
+    private void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            Debug.Log("GameManager created and marked DontDestroyOnLoad.");
+        }
+        else if (Instance != this)
+        {
+            Debug.Log("Duplicate GameManager detected and destroyed.");
+            Destroy(gameObject);
         }
     }
 
+
     public void LevelUp()
     {
-        ChangeSceneAfterDelay(1, 5f);
+        isLevelUp = true;
+        ChangeSceneAfterDelay(0, 5f);
+    }
+    public bool IsLevelUp()
+    {
+        return isLevelUp;
     }
 
     public void GameOver()
     {
         isGameOver = true;
-        ChangeSceneAfterDelay(1, 5f);
+        ChangeSceneAfterDelay(0, 5f);
     }
     public void RightKeyCollected()
     {
