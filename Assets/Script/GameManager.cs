@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     private bool isGameOver = false;
     private bool isLevelUp = false;
     private bool rightKeyCollected = false;
+    private int currnetLevel = 1;
     void Start()
     {
         
@@ -36,6 +37,13 @@ public class GameManager : MonoBehaviour
             Debug.Log("Duplicate GameManager detected and destroyed.");
             Destroy(gameObject);
         }
+    }
+
+    public void Reset()
+    {
+        isGameOver = false;
+        isLevelUp = false;
+        rightKeyCollected = false;
     }
 
 
@@ -81,5 +89,14 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
         Debug.Log("Time elapsed, loading scene: " + sceneIndex);
         SceneManager.LoadScene(sceneIndex);
+    }
+
+    public int GetCurrentLevel()
+    {
+        return currnetLevel;
+    }
+    public void SetCurrentLevel(int level)
+    {
+        currnetLevel = level;
     }
 }
