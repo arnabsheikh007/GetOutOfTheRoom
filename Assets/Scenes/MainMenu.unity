@@ -1094,6 +1094,71 @@ MonoBehaviour:
   gameOverPanel: {fileID: 1740395374}
   gameWonPanel: {fileID: 121380324}
   mainMenuPanel: {fileID: 162878483}
+--- !u!1 &569732466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 569732468}
+  - component: {fileID: 569732467}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &569732467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569732466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728cab5f127deea45b883f0b83c8e64c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Theme
+    clip: {fileID: 8300000, guid: 5ae2ad9258b60ce47af89fa4fc0e995b, type: 3}
+    volume: 0.2
+    loop: 1
+    source: {fileID: 0}
+  - name: KeyCollect
+    clip: {fileID: 8300000, guid: 15ab0372c78f39841b6f1debe9ff1a3f, type: 3}
+    volume: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: DoorOpen
+    clip: {fileID: 8300000, guid: 33209ce43ba161941a278da6a9b03527, type: 3}
+    volume: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: Blast
+    clip: {fileID: 8300000, guid: 7d1ef19d1226abd4d9361644e1df9445, type: 3}
+    volume: 2
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &569732468
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569732466}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &668488649
 GameObject:
   m_ObjectHideFlags: 0
@@ -2261,3 +2326,4 @@ SceneRoots:
   - {fileID: 353669197}
   - {fileID: 184178527}
   - {fileID: 1702918482}
+  - {fileID: 569732468}

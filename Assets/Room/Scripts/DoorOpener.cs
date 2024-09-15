@@ -24,6 +24,7 @@ public class DoorOpener : MonoBehaviour
                 {
                     // Trigger the Door_Open animation
                     doorAnimator.SetTrigger("Door_Open");
+                    AudioManager.Instance.playSound("DoorOpen");
                 }
                 // Call the LevelUp function from the GameManager script
                 GameManager.Instance.LevelUp();

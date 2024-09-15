@@ -45,6 +45,7 @@ public class BombBlast : MonoBehaviour
             {
                 // Set the "isDead" parameter to true
                 playerAnimator.SetBool("IsDead", true);
+                AudioManager.Instance.playSound("Blast");
             }
             // Disable the player control script 
             //ThirdPersonController playerController = other.GetComponent<ThirdPersonController>();

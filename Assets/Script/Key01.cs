@@ -27,6 +27,8 @@ public class Key01 : MonoBehaviour
             // Destroy the collectible
             Destroy(key);
 
+            AudioManager.Instance.playSound("KeyCollect");
+
             // instantiate the particle effect
             Instantiate(onCollectEffect, transform.position, transform.rotation);
 
