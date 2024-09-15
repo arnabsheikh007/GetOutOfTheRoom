@@ -5,6 +5,7 @@ using UnityEngine;
 public class DoorOpener : MonoBehaviour
 {
     private Animator doorAnimator;
+    public bool isCorrectDoor;
 
     void Start()
     {
@@ -27,7 +28,21 @@ public class DoorOpener : MonoBehaviour
                     AudioManager.Instance.playSound("DoorOpen");
                 }
                 // Call the LevelUp function from the GameManager script
-                GameManager.Instance.LevelUp();
+                if (isCorrectDoor)
+                {
+                    GameManager.Instance.LevelUp();
+                }
+                else
+                {
+                    Animator playerAnimator = other.GetComponent<Animator>();
+                    if (playerAnimator != null)
+                    {
+                        // Set the "isDead" parameter to true
+                        playerAnimator.SetBool("IsDead", true);
+                        AudioManager.Instance.playSound("Blast");
+                    }
+                    GameManager.Instance.GameOver();
+                }
             }
         }
     }
