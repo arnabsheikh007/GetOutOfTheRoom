@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     public void LevelUp()
     {
         isLevelUp = true;
-        ChangeSceneAfterDelay(0, 5f);
+        ChangeSceneAfterDelay(0, 2f);
     }
     public bool IsLevelUp()
     {
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         isGameOver = true;
-        ChangeSceneAfterDelay(0, 5f);
+        ChangeSceneAfterDelay(0, 3f);
     }
     public void RightKeyCollected()
     {
