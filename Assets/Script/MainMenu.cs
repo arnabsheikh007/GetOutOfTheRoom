@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject levelUpPanel;
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject gameWonPanel;
+    [SerializeField] private GameObject instructionPanel;
     [SerializeField] private GameObject mainMenuPanel;
     void Start()
     {
@@ -73,12 +74,19 @@ public class MainMenu : MonoBehaviour
         gameWonPanel.SetActive(true);
     }
 
+    public void LoadInstructionPanel()
+    {
+        mainMenuPanel.SetActive(false);
+        instructionPanel.SetActive(true);
+    }
+
     public void LoadMainMenuPanel()
     {
         GameManager.Instance.Reset();
         levelUpPanel.SetActive(false);
         gameOverPanel.SetActive(false);
         gameWonPanel.SetActive(false);
+        instructionPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
     }
 
@@ -89,4 +97,4 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(currentLevel);
     }
 
-}
+} 
